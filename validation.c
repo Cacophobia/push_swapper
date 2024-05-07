@@ -1,24 +1,18 @@
-#include "PushSwap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validation.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/07 08:30:29 by nranna            #+#    #+#             */
+/*   Updated: 2024/05/07 08:36:36 by nranna           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "swap_push.h"
+
 static int is_valid_number(char const *str);
-
-static int is_valid_number(char const *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[0] == '+' || str[0] == '-')
-		i++;
-	while (str[i])
-	{
-		if (isdigit(str[i]) == 0)
-		{
-			write(2, "Error! nondigit char found\n", 21);
-			return (EXIT_FAILURE);
-		}
-		i++;
-	}
-	return (EXIT_SUCCESS);
-}
 
 int validate_args(int argc, char **argv)
 {
@@ -34,6 +28,25 @@ int validate_args(int argc, char **argv)
 	{
 		if (is_valid_number(argv[i]) != EXIT_SUCCESS)
 			return (EXIT_FAILURE);
+		i++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+static int is_valid_number(char const *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '+' || str[0] == '-')
+		i++;
+	while (str[i])
+	{
+		if (isdigit(str[i]) == 0)
+		{
+			write(2, "Error! nondigit char found\n", 21);
+			return (EXIT_FAILURE);
+		}
 		i++;
 	}
 	return (EXIT_SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 03:44:24 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/07 06:59:47 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/07 08:29:11 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //TODO: operacoes;
 //TODO: radix bubble sort o caralha4
 
-#include "PushSwap.h"
+#include "swap_push.h"
 
 int main(int argc, char **argv)
 {

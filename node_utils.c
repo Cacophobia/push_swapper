@@ -6,11 +6,11 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:32:55 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/07 06:13:55 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/07 08:29:30 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PushSwap.h"
+#include "swap_push.h"
 
 t_node	*create_node(int index, long int nbr)
 {

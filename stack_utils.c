@@ -6,11 +6,11 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:48:04 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/07 06:54:40 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/07 08:29:44 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PushSwap.h"
+#include "swap_push.h"
 
 int	stack_pushback(t_node *node, t_stack *stack)
 {
