@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils.c                                       :+:      :+:    :+:   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 05:32:55 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 15:36:11 by nranna           ###   ########.fr       */
+/*   Created: 2024/05/09 15:48:29 by nranna            #+#    #+#             */
+/*   Updated: 2024/05/09 16:00:26 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "swap_push.h"
 
-t_node	*create_node(int index, long int nbr)
+static int	push(t_stack *stack_src, t_stack *stack_dest)
 {
-	t_node	*new_node;
-
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->index = index;
-	new_node->number = nbr;
-	new_node->next = NULL;
-	return (new_node);
-}
-/*
-void	destroy_node(t_node *node)
-{
-
-	return ;
+	if ()
 }*/

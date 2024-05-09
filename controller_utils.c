@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils.c                                       :+:      :+:    :+:   */
+/*   controller_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 05:32:55 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 15:36:11 by nranna           ###   ########.fr       */
+/*   Created: 2024/05/09 15:26:37 by nranna            #+#    #+#             */
+/*   Updated: 2024/05/09 15:32:57 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "swap_push.h"
 
-t_node	*create_node(int index, long int nbr)
+void	clear_controller(t_controller *controller)
 {
-	t_node	*new_node;
-
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->index = index;
-	new_node->number = nbr;
-	new_node->next = NULL;
-	return (new_node);
-}
-/*
-void	destroy_node(t_node *node)
-{
-
+	clear_stack(&controller->stack_a);
+	clear_stack(&controller->stack_b);
 	return ;
-}*/
+}

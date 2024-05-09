@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 08:30:29 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/07 08:36:36 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 15:43:36 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,26 @@ static int is_valid_number(char const *str)
 	{
 		if (isdigit(str[i]) == 0)
 		{
-			write(2, "Error! nondigit char found\n", 21);
+			write(2, "Error! nondigit char found\n", 28);
 			return (EXIT_FAILURE);
 		}
 		i++;
 	}
 	return (EXIT_SUCCESS);
+}
+
+bool	search_number(t_stack *stack, int find)
+{
+	t_node	*itr;
+	
+	if (!stack || !stack->head)
+		return (false);
+	itr = stack->head;
+	while (itr)
+	{
+		if (itr->number == find)
+			return (true);
+		itr = itr->next;
+	}
+	return (false);
 }

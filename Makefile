@@ -1,6 +1,7 @@
 NAME = pushswap
 
 SRCS = $(wildcard ./*.c)
+INCLUDE = swap_push.h
 
 CC = cc
 
@@ -22,8 +23,8 @@ re: clean all
 
 .PHONY: run
 run: all
-	ARG=$$(shuf -i 1-250 -n $(n)); ./pushswap $$ARG
+	ARG=$$(seq -500 500 | shuf -n $(n)); ./pushswap $$ARG
 
-$(NAME): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(SRCS) $(INCLUDE)
+	$(CC) $(CFLAGS) $(SRCS) $(INCLUDE) -o $(NAME)
 
