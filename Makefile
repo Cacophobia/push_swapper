@@ -23,7 +23,10 @@ re: clean all
 
 .PHONY: run
 run: all
-	ARG=$$(seq -500 500 | shuf -n $(n)); ./pushswap $$ARG
+	ARG=$$(seq -500 500 | shuf -n $(n) | tr '\n' ' '); ./pushswap $$ARG
+
+runwc: all
+	ARG=$$(seq -500 500 | shuf -n $(n) | tr '\n' ' '); ./pushswap $$ARG | wc -l
 
 $(NAME): $(SRCS) $(INCLUDE)
 	$(CC) $(CFLAGS) $(SRCS) $(INCLUDE) -o $(NAME)

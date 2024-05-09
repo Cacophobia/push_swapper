@@ -28,6 +28,7 @@ typedef struct s_controller
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
+	unsigned int	total_args;
 }	t_controller;
 
 // input validations
@@ -64,5 +65,6 @@ int	rotate_ab(t_controller *controller);
 
 // algo
 void	radix(t_controller *controller);
+bool	is_sorted(t_stack *stack);
 
 #endif // !SWAP_PUSH_H

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 03:44:24 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 18:58:10 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 19:56:57 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ int main(int argc, char **argv)
 		clear_controller(&controller);
 		return (EXIT_FAILURE);
 	}
+	controller.total_args = argc - 1;
 	index_stack(&controller.stack_a);
-	radix(&controller);
-	print_stack(&controller.stack_a);
+	if (!is_sorted(&controller.stack_a))
+		radix(&controller);
+//	print_stack(&controller.stack_a);
 	clear_controller(&controller);
 	return (EXIT_SUCCESS);
 }

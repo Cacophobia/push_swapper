@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 08:30:29 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 15:43:36 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 19:55:26 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int validate_args(int argc, char **argv)
 {
 	int	i;
 
-	if (argc < 2)
+	if (argc < 3)
 	{
 		write(2, "Error! Invalid ammount of arguments\n", 36);
 		return (EXIT_FAILURE);
