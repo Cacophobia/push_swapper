@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:30:34 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 19:01:38 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 19:15:05 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	radix(t_controller *controller)
 
 	ref_bit = 0;
 	highest_bit = highest_bit_stack(&controller->stack_a);
-	while (ref_bit <= highest_bit)
+	(void)highest_bit;
+	while (ref_bit <= 31)
 	{
 		i = 0;
 		while (i < controller->stack_a.size)

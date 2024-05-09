@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:48:04 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 17:41:41 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 19:11:16 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	stack_pushback(t_node *node, t_stack *stack)
 
 	if (stack->head == NULL)
 	{
+		node->next = NULL;
 		stack->head = node;
 		stack->size++;
 		return (0);
@@ -40,11 +41,13 @@ int	stack_pushfront(t_node *node, t_stack *stack)
 	{
 		node->next = NULL;
 		stack->head = node;
+		stack->size++;
 		return (0);
 	}
 	tmp = stack->head;
 	stack->head = node;
 	node->next = tmp;
+	stack->size++;
 	return (0);
 }
 
