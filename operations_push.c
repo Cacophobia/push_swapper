@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:48:29 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 16:23:27 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 19:00:22 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static int	push(t_stack *stack_src, t_stack *stack_dest)
 	tmp = stack_src->head;
 	stack_src->head = stack_src->head->next;
 	stack_src->size--;
+	if (stack_src->size == 0)
+		stack_src->head = NULL;
 	stack_pushfront(tmp, stack_dest);
 	return (0);
 }

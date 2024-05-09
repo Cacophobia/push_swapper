@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:48:04 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 16:41:08 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 17:41:41 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ bool	load_stack(t_stack *stack, char **argv)
 		aux = create_node(NOT_INDEXED, atol(argv[i]));
 		if (!aux)
 			return (false);
-		stack_pushback(aux, stack);
+		stack_pushback(aux, stack);   //is my stack upside down?
 		i++;
 	}
 	return (true);

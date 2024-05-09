@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:32:55 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 15:36:11 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 17:36:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,3 @@ t_node	*create_node(int index, long int nbr)
 	new_node->next = NULL;
 	return (new_node);
 }
-/*
-void	destroy_node(t_node *node)
-{
-
-	return ;
-}*/

@@ -55,8 +55,14 @@ int	swap_b(t_controller *controller);
 int	swap_ab(t_controller *controller);
 int	push_a(t_controller *controller);
 int	push_b(t_controller *controller);
+int	revrotate_a(t_controller *controller);
+int	revrotate_b(t_controller *controller);
+int	revrotate_ab(t_controller *controller);
 int	rotate_a(t_controller *controller);
 int	rotate_b(t_controller *controller);
 int	rotate_ab(t_controller *controller);
+
+// algo
+void	radix(t_controller *controller);
 
 #endif // !SWAP_PUSH_H
