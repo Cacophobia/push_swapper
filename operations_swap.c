@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:02:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 15:47:40 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:14:20 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	swap(t_stack stack)
 {
 	t_node	*head;
 	t_node	*next;
-	int	tmp_number;
-	int	tmp_index;
+	int		tmp_number;
+	int		tmp_index;
 
 	if (stack.size < 2)
 		return (EXIT_FAILURE);

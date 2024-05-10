@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:30:34 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 19:57:50 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:15:49 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	highest_bit_stack(t_stack *stack)
 	}
 	return (highest_bit);
 }
-
+/*
 void	radix(t_controller *controller)
 {
 	int	ref_bit;
@@ -53,11 +53,11 @@ void	radix(t_controller *controller)
 		if (is_sorted(&controller->stack_a))
 			break ;
 	}
-}
+}*/
 
 bool	is_sorted(t_stack *stack)
 {
-	t_node	*itr;
+	t_node			*itr;
 	unsigned int	i;
 
 	itr = stack->head;
@@ -71,3 +71,31 @@ bool	is_sorted(t_stack *stack)
 	}
 	return (true);
 }
+
+void	sort_three(t_controller *controller, t_stack *stack)
+{
+	if (stack->head->index == 0 && stack->head->next->next->index == 1)
+	{
+		revrotate_a(controller);
+		swap_a(controller);
+	}
+	else if (stack->head->index == 1)
+	{
+		if (stack->head->next->next->index == 0)
+			revrotate_a(controller);
+		else
+			swap_a(controller);
+	}
+	else if (stack->head->index == 2)
+	{
+		if (stack->head->next->next->index == 0)
+		{
+			rotate_a(controller);
+			swap_a(controller);
+		}
+		else
+			rotate_a(controller);
+	}
+}
+
+//void sort_five(t_controller *controller, t_stack *stack)

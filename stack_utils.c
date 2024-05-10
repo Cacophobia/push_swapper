@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:48:04 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 19:11:16 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:24:00 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,9 @@ int	stack_pushfront(t_node *node, t_stack *stack)
 	return (0);
 }
 
-void	print_stack(t_stack *stack)
-{
-	t_node	*itr;
-
-	itr = stack->head;
-	while (itr)
-	{
-		printf("---------\n");
-		printf("valor de index: %ld\nValor de NUMBER <%ld>\n", itr->index, itr->number);
-		itr = itr->next;
-	}
-	return ;
-}
-
 void	index_stack(t_stack *stack)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < stack->size)
@@ -75,7 +61,6 @@ void	index_stack(t_stack *stack)
 		index_lowest_n(i, stack);
 		i++;
 	}
-
 	return ;
 }
 
@@ -84,7 +69,7 @@ void	index_lowest_n(unsigned int index, t_stack *stack)
 	t_node		*itr;
 	t_node		*lil_reff;
 	long int	min;
-	
+
 	min = LONG_MAX;
 	itr = stack->head;
 	lil_reff = stack->head;
@@ -95,7 +80,6 @@ void	index_lowest_n(unsigned int index, t_stack *stack)
 			lil_reff = itr;
 			min = itr->number;
 		}
-			
 		itr = itr->next;
 	}
 	lil_reff->index = index;
@@ -106,7 +90,7 @@ bool	load_stack(t_stack *stack, char **argv)
 	int		i;
 	int		ref;
 	t_node	*aux;
-	
+
 	if (!stack)
 		return (false);
 	i = 0;
@@ -115,13 +99,13 @@ bool	load_stack(t_stack *stack, char **argv)
 		ref = atol(argv[i]);
 		if (search_number(stack, ref) == true)
 		{
-			write(STDOUT_FILENO, "Error! Equal numbers detected\n", 31);
+			write(1, "Error! Equal numbers detected\n", 31);
 			return (false);
 		}
 		aux = create_node(NOT_INDEXED, atol(argv[i]));
 		if (!aux)
 			return (false);
-		stack_pushback(aux, stack);   //is my stack upside down?
+		stack_pushback(aux, stack);
 		i++;
 	}
 	return (true);
@@ -131,7 +115,7 @@ void	clear_stack(t_stack *stack)
 {
 	t_node	*curr;
 	t_node	*next;
-	
+
 	if (!stack || !stack->head)
 		return ;
 	curr = stack->head;

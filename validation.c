@@ -6,15 +6,15 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 08:30:29 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 19:55:26 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:29:56 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "swap_push.h"
 
-static int is_valid_number(char const *str);
+static int	is_valid_number(char const *str);
 
-int validate_args(int argc, char **argv)
+int	validate_args(int argc, char **argv)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int validate_args(int argc, char **argv)
 	return (EXIT_SUCCESS);
 }
 
-static int is_valid_number(char const *str)
+static int	is_valid_number(char const *str)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ static int is_valid_number(char const *str)
 bool	search_number(t_stack *stack, int find)
 {
 	t_node	*itr;
-	
+
 	if (!stack || !stack->head)
 		return (false);
 	itr = stack->head;

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:42:35 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 17:55:23 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:12:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static	int	rev_rotate(t_stack *stack)
 		return (1);
 	else if (stack->size < 2)
 		return (0);
-	 last = stack->head;
-	 second_to_last = stack->head;
-	 last = last->next;
-	 while (last->next != NULL)
-	 {
-		 last = last->next;
-		 second_to_last = second_to_last->next;
-	 }
+	last = stack->head;
+	second_to_last = stack->head;
+	last = last->next;
+	while (last->next != NULL)
+	{
+		last = last->next;
+		second_to_last = second_to_last->next;
+	}
 	last->next = stack->head;
 	stack->head = last;
 	second_to_last->next = NULL;
