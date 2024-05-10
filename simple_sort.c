@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:30:34 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/10 10:31:30 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 12:28:30 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	sort_three(t_controller *controller, t_stack *stack)
 void	sort_five(t_controller *controller, t_stack *stack)
 {
 	while (stack->head->index != 3 && stack->head->index != 4)
-		revrotate_a(controller);
+		rotate_a(controller);
 	push_b(controller);
 	while (stack->head->index != 3 && stack->head->index != 4)
-		revrotate_a(controller);
+		rotate_a(controller);
 	push_b(controller);
 	sort_three(controller, &controller->stack_a);
 	if (controller->stack_b.head->index == 4)

@@ -6,17 +6,19 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 03:44:24 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/10 10:34:45 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 12:31:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "swap_push.h"
 
+static	void	*ft_memset(void	*s, int c, unsigned int n);
+
 int	main(int argc, char **argv)
 {
 	t_controller	controller;
 
-	memset(&controller, 0, sizeof(t_controller));
+	ft_memset(&controller, 0, sizeof(t_controller));
 	if (validate_args(argc, argv) != EXIT_SUCCESS)
 		return (EXIT_FAILURE);
 	if (load_stack(&controller.stack_a, &argv[1]) == false)
@@ -57,4 +59,22 @@ void	clear_stack(t_stack *stack)
 	stack->size = 0;
 	stack->head = NULL;
 	return ;
+}
+
+static	void	*ft_memset(void	*s, int c, unsigned int n)
+{
+	unsigned int	i;
+	unsigned char	*ptr_i;
+	unsigned char	ptr_val;
+
+	i = 0;
+	ptr_i = (unsigned char *)s;
+	ptr_val = (unsigned char)c;
+	while (i < n)
+	{
+		*ptr_i = ptr_val;
+		ptr_i++;
+		i++;
+	}
+	return (s);
 }

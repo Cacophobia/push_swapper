@@ -5,7 +5,7 @@ INCLUDE = swap_push.h
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 .PHONY: all
 all: $(NAME)
