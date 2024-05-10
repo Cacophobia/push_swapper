@@ -6,13 +6,11 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:01:20 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 22:13:48 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 09:29:41 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "swap_push.h"
-
-// 6->5->8 vira 5->8->6
 
 static int	rotate(t_stack *stack)
 {

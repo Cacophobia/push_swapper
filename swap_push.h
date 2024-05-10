@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 22:30:59 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 22:33:37 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:32:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,10 @@ int		rotate_ab(t_controller *controller);
 void	radix(t_controller *controller);
 bool	is_sorted(t_stack *stack);
 void	sort_three(t_controller *controller, t_stack *stack);
-void 	sort_five(t_controller *controller, t_stack *stack)
-int		find_min_index(t_stack *stack)
+void	sort_five(t_controller *controller, t_stack *stack);
+int		find_min_index(t_stack *stack);
+
+//uncomment me for debug
+void	print_stack(t_stack *stack);
 
 #endif // !SWAP_PUSH_H

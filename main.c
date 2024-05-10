@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 03:44:24 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 22:26:49 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:34:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,21 @@ int	main(int argc, char **argv)
 	return (EXIT_SUCCESS);
 }
 
-void	radix(t_controller *controller)
+void	clear_stack(t_stack *stack)
 {
-	int				ref_bit;
-	int				highest_bit;
-	unsigned int	i;
+	t_node	*curr;
+	t_node	*next;
 
-	ref_bit = 0;
-	highest_bit = highest_bit_stack(&controller->stack_a);
-	while (ref_bit <= highest_bit)
+	if (!stack || !stack->head)
+		return ;
+	curr = stack->head;
+	while (curr)
 	{
-		i = 0;
-		while (i < controller->total_args)
-		{
-			if (controller->stack_a.head->index & (1 << ref_bit))
-				rotate_a(controller);
-			else
-				push_b(controller);
-			i++;
-		}
-		while (controller->stack_b.head != NULL)
-			push_a(controller);
-		ref_bit++;
-		if (is_sorted(&controller->stack_a))
-			break ;
+		next = curr->next;
+		free(curr);
+		curr = next;
 	}
+	stack->size = 0;
+	stack->head = NULL;
+	return ;
 }

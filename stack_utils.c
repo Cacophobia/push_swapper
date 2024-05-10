@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 05:48:04 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/09 22:24:00 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:34:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,23 +109,4 @@ bool	load_stack(t_stack *stack, char **argv)
 		i++;
 	}
 	return (true);
-}
-
-void	clear_stack(t_stack *stack)
-{
-	t_node	*curr;
-	t_node	*next;
-
-	if (!stack || !stack->head)
-		return ;
-	curr = stack->head;
-	while (curr)
-	{
-		next = curr->next;
-		free(curr);
-		curr = next;
-	}
-	stack->size = 0;
-	stack->head = NULL;
-	return ;
 }
